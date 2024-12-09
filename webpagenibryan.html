@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Blog</title>
+  <style>
+   
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0d0d0d url('flex-friends.jpg') no-repeat center center;
+      background-size: cover;
+      color: #E5E5E5;
+      min-height: 100%;
+    }
+
+    html {
+      box-sizing: border-box;
+      height: 100%;
+    }
+
+    *, *::before, *::after {
+      box-sizing: inherit;
+    }
+
+    h1, p {
+      margin: 0;
+    }
+
+    p {
+      text-align: center;
+      font-size: 1.25rem;
+      line-height: 1.6;
+    }
+
+    
+    header {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 10px 0;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+	  gap: 50px;
+    }
+
+    nav ul li {
+      margin: 0 50px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+      color: #E5E5E5;
+      position: relative;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    nav ul li a::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    nav ul li a:hover {
+      color: #0078ff;
+      transform: scale(1.1);
+    }
+
+    nav ul li a:hover::after {
+      transform: scaleX(1);
+    }
+
+   
+    main {
+      max-width: 1200px;
+      margin: 50px auto;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.8);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .profile {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 20px;
+    }
+
+    .text-content, .text-con {
+      flex: 1;
+      padding: 0 20px;
+    }
+
+    .text-content h1, .text-con h1 {
+      font-size: 1.75rem;
+      font-weight: bold;
+      color: #E5E5E5;
+      transition: color 0.3s, transform 0.3s, opacity 0.3s;
+    }
+
+    .text-content:hover h1, .text-con:hover h1 {
+      color: cyan;
+      transform: translateY(-10px);
+      opacity: 0.9;
+    }
+
+    .video-content {
+      flex: 1;
+      text-align: center;
+	  
+    }
+
+    .video-content video {
+      width: 250px;
+      height: 210px;
+      border-radius: 10%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s, box-shadow 0.3s, opacity 0.3s;
+	  gap: 40px;
+    }
+
+    .video-content video:hover {
+      transform: scale(1.1) rotate(5deg);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+      opacity: 1;
+    }
+
+    .topic2 {
+      margin: 30px auto;
+      max-width: 800px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      color: #E5E5E5;
+    }
+
+    .Bdate {
+      font-size: 1.25rem;
+      line-height: 1.6;
+    }
+
+   
+    .social-icons {
+      margin-top: 50px;
+      display: flex;
+      justify-content: center;
+      gap: 100px;
+    }
+
+    .social-icons a {
+      text-decoration: none;
+      display: inline-block;
+      width: 70px;
+      height: 70px;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+
+    .social-icons img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      transition: transform 0.3s, box-shadow 0.3s, opacity 0.3s;
+    }
+
+    .social-icons img:hover {
+      transform: scale(1.1) rotate(10deg);
+      box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+      opacity: 0.9;
+    }
+
+    
+    footer {
+      margin-top: 30px;
+      color: #E5E5E5;
+      text-align: center;
+      font-size: 1rem;
+    }
+
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .profile {
+        flex-direction: row;
+        text-align: left;
+      }
+
+      .text-content h1, .text-con h1 {
+        font-size: 2rem;
+      }
+
+      .image-content img {
+        width: 250px;
+        height: 250px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="webpagenibryan-it111blog.html">IT111BLOG</a></li>
+        <li><a href="flexnibryan.html">Flex</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <div class="profile">
+      <div class="text-content">
+        <h1>Hi BEBES!</h1>
+      </div>
+      <div class="text-con">
+        <h1>Bryan Dave S. Peregrino</h1>
+      </div>
+      <div class="video-content">
+        <video src="akoa.mp4"controls autoplay 	alt="Profile Image">
+      </div>
+    </div>
+    <div class="topic2">
+      <p class="Bdate">
+        Hi! I'm passionate about cycling, writing music, and capturing the world around me.<br>
+        Whether I'm out riding or just exploring new places, I love taking photos and filming<br>
+        videos with my phone to document my experiences. It's my way of expressing creativity<br>
+        and staying connected to the things I love!
+      </p>
+    </div>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/7ft_ndground/profilecard/?igsh=eTBybzV3OWRocHJv" target="_blank" title="Instagram">
+        <img src="ig.png" alt="Instagram">
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=100073609616751&mibextid=ZbWKwL" target="_blank" title="Facebook">
+        <img src="fb.png" alt="Facebook">
+      </a>
+      <a href="https://x.com/HarukiAi1?t=I8YylnAY-bbQ41COogChzw&s=09" target="_blank" title="X (Twitter)">
+        <img src="x.png" alt="X">
+      </a>
+    </div>
+    <footer>
+      &copy;2024 Version 1.0.0 | Developed by Bryan Peregrino
+    </footer>
+  </main>
+</body>
+</html>

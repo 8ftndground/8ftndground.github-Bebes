@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html>
+<head>
+ 
+  <title>Flex</title>
+  <style>
+   
+     body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0d0d0d url('flex-friends.jpg') no-repeat center center;
+      background-size: cover;
+	  min-height: 100%;
+    }
+
+    header {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 15px 0;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+	  gap: 90px;
+    }
+
+    nav ul li {
+      margin: 0 55px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.3998rem;
+      color: #E5E5E5;
+      position: relative;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    nav ul li a::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    nav ul li a:hover {
+      color: #0078ff;
+      transform: scale(1.1);
+    }
+
+    nav ul li a:hover::after {
+      transform: scaleX(1);
+    }
+
+    main {
+      max-width: 1200px
+      margin: 50px auto;
+      padding: 20px;
+		
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+    .profile {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+	  text-align: justify;
+    }
+
+    .text-content {
+      flex: 1;
+      padding-right: 20px;
+    }
+
+    .text-content h1 {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #E5E5E5;
+    }
+
+    .text-content p {
+      margin: 10px 0;
+      line-height: 1.5;
+	  color: #E5E5E5;
+	  
+    }
+
+    .text-content .email {
+      font-weight: bold;
+    }
+
+    .image-content {
+      flex: 1;
+      text-align: center;
+    }
+
+    .image-content img {
+      width: 400px;
+      height: 400px;
+      border-radius: 10%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+	  margin: 60px;
+	  border:1px ;
+	
+    }
+
+    .image-content img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+	  box-shadow: 0 0 10px white;
+	   
+    }
+
+
+	footer {
+			color: white;
+			text-align: center;
+			padding: 0;
+			font-size: 20px;
+			position: fixed;
+			right:0;
+			left:0;
+			bottom:0;
+}
+	html{
+		box-sizing: border-box;
+		height: 100%;
+}		
+		
+.blog-content{
+    gap: 10px;
+    position: relative;
+    
+    top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.topic1{
+    border: solid #E5E5E5;
+    width: 250px;
+    height: 75vh;
+    border-radius: 20px;
+    padding: 25px;
+	color: black;	
+
+	
+}
+
+.topic3{
+	border: solid #E5E5E5;
+    width: 250px;
+    height: 75vh;
+    border-radius: 20px;
+    padding: 25px;
+	color: black;
+	font-size: 20px;
+}
+
+.bdate{
+    position: relative;
+    top: 10px;
+    left: 30px;
+	font-size: 25px;
+}
+
+.info{
+    width: 250px;
+    height: 400px;
+    border-radius: 10px;
+    position: relative;
+    top: 20px;
+}
+
+.btitle{
+    position: relative;
+    top: 50px;
+	font-size: 20px;
+	color: #3D3938;
+}
+
+.bxp{
+    position: relative;
+    top: 50px;
+	font-size: 20px;
+	color: #3D3938;
+}
+
+.topic2{
+    border: solid #E5E5E5;
+    width: 250px;
+    height: 75vh;
+    border-radius: 20px;
+    padding: 25px; 
+	color: black;
+}
+
+.Bdate{
+    position: relative;
+    top: 10px;
+    left: 30px;
+	font-size: 25px;	
+
+}
+
+.Btitle{
+    position: relative;
+    top: 25px;
+	font-size: 50px;
+	color: #3D3938;
+}
+
+.Bxp{
+    position:relative;
+    top: 55px;
+	font-size: 25px;
+	color: #3D3938;
+
+}
+
+.ino{
+    width: 145px;
+    height: 300px;
+    border-radius: 10px;
+    position: relative;
+    top: 20px;
+	right: 9px;
+}
+
+.bmage{
+    display: flex;
+    position: relative;
+    right: 14px;
+    gap: 5px;
+	color: #3D3938;
+}
+.dmage{
+    display: flex;
+    position: relative;
+    right: 40px;
+    gap: 5px;
+	color: #3D3938;
+}
+.ctitle{
+    position: relative;
+    top: 50px;
+	font-size: 25px;
+	color: #3D3938;
+}
+
+.cxp{
+    position: relative;
+    top: 90px;
+	font-size: 25px;
+	color: #3D3938;
+}
+
+.ifo{
+    width: 250px;
+    left: 0px;
+    height: 300px;
+    border-radius: 10px;
+    position: relative;
+    top: 20px; 
+}
+
+.edate{
+    position: relative;
+    top: 10px;
+    left: 30px;
+	
+}
+
+.io{
+    width: 145px;
+    left: 17px;	
+    height: 250px;
+    border-radius: 10px;
+    position: relative;
+    top: 20px; 
+}
+.ro{
+    width: 250px;
+    left: 0px;
+    height: 270px;
+    border-radius: 10px;
+    position: relative;
+    top: 50px; 
+
+}
+
+.ktitle{
+    position: relative;
+    top: 40px;
+	font-size: 20px;
+	color: #3D3938;
+}
+
+.kxp{
+    position: relative;
+    top: 55px;
+	font-size: 15px;
+	color: #3D3938;
+}
+
+.topic1:hover, .topic2:hover, .topic3:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); /* Adjusted box shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    color: white;
+    box-shadow: 0 0 50px white;
+    background: rgba(135, 117, 107, 0.5); /* 30% opacity */
+}
+	.topic3 img:hover{
+	transform: scale(1.05);
+     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+	.topic1 img:hover{
+	transform: scale(1.05);
+     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+	 color: white;
+}
+	.btitle:hover{
+	transform: scale(1.05);
+     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+	 color: white;
+}
+	.bxp:hover{
+	transform: scale(1.05);
+     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+	 color: white;
+}
+	.ctitle:hover{
+	transform: scale(1.05);
+     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+	 color: white;
+}
+	 
+	.cxp:hover{
+	transform: scale(1.05);
+     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+	 color: white;
+}
+	 .Btitle:hover{
+	transform: scale(1.05);
+     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+	 color: white;
+}
+	 .Bxp:hover{
+	 transform: scale(1.05);
+     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+	 color: white;
+}	 
+	 
+	 .ktitle:hover{
+	 transform: scale(1.05);
+     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+	 color: white;
+}	 
+	 
+	 .kxp:hover{
+	 transform: scale(1.05);
+     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+	 color: white;
+}	 
+
+    @media (max-width: 768px) {
+      .blog-content {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .topic1, .topic2, .topic3 {
+        max-width: 90%;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h4, h3 {
+        font-size: 1.1rem;
+      }
+
+      p {
+        font-size: 0.85rem;
+      }
+
+      nav ul li a {
+        font-size: 1rem;
+      }
+    }
+	 
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="webpagenibryan.html">Home</a></li>
+		<li><a href="#">IT111BLOG</a></li>
+        <li><a href="flexnibryan.html">Flex</a></li>
+		
+      </ul>
+    </nav>
+  </header>
+  <main>
+<section id="Blog">
+    <div class="blog-content">
+        <div class="topic1">
+            <p class="bdate">August 30, 2024</p>
+            <img src="Transis.jpeg" class="info">
+            <h4 class="btitle">Topic 1: Technology Timeline to Computing's Impact to Industries</h4>
+            <p class="bxp">- In this topic we've tackled about the technological timeline and then we are tasked to
+                do an infographics regarding the topic.
+            </p>
+        </div>
+        <div class="topic2">
+            <p class="Bdate">September 9, 2024</p>
+            <h3 class="Btitle">Topic 2 and 3: Information Processing Cycle and Computer Systems</h3>
+           <p class="Bxp">- In this topic we've tackled about the Information Cycle and Computer Systems.</p> 
+        </div>
+        <div class="topic1">
+            <p class="bdate">September 17, 2024</p>
+            <div class="bmage"><img src="topic3.jpg" class="ino">
+            <img src="topic.jpg" class="ino"></div>
+            <h4 class="ctitle">Topic 4: Concept of Computer Security</h4>
+            <p class="cxp">- In this topic we've tackled about Computer Security and we are tasked to compile Cybercrime case.
+            </p>
+        </div>
+        <div class="topic1">
+            <p class="bdate">November 7, 2024</p>
+            <img src="bisaya.jpg" class="ifo">
+            <h4 class="btitle">Topic 5: The Internet and World Wide Web</h4>
+            <p class="bxp">- In this topic we've tackled about the Internet and WWW and then we are tasked to do an 
+                cross-analysis about Cloud computing, AI, and IoT using venn diagram.
+            </p>
+        </div>
+        <div class="topic3">
+            <p class="edate">October 28, 2024</p>
+           <div class="dmage"><img src="wf1.jpg" class="io">
+            <img src="wf2.jpg" class="io"></div>
+			<img src="wf.jpg" class="ro">
+            <h4 class="ktitle">Topic 6: HTML AND CSS</h4>
+            <p class="kxp">- In this topic we've tackled about the HTML and CSS  
+                and we are tasked to create our own website and also this is my favorite among all topics because i like coding.
+
+            </p>
+        </div>
+
+        
+    </div>
+   
+   </section>
+	<footer>
+	&copy;2024 Version 1.0.0 | Developed by Bryan Peregrino 
+	</footer>
+  </main>
+</body>
+</html>

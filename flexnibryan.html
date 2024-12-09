@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+ 
+  <title>Flex</title>
+  <style>
+   
+     body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0d0d0d url('flex-friends.jpg') no-repeat center center;
+      background-size: cover;
+	  min-height: 100%;
+    }
+
+    header {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 15px 0;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+	  gap: 89px;
+	 
+		
+    }
+
+    nav ul li {
+      margin: 0 50px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.25rem;
+      color: #E5E5E5;
+      position: relative;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    nav ul li a::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    nav ul li a:hover {
+      color: #0078ff;
+      transform: scale(1.1);
+    }
+
+    nav ul li a:hover::after {
+      transform: scaleX(1);
+    }
+
+    main {
+      max-width: 1200px
+      margin: 50px auto;
+      padding: 20px;
+		
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+	
+	.topic2 {
+      margin: 30px auto;
+      max-width: 800px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      color: #E5E5E5;
+    }
+
+    .Bdate {
+      font-size: 1.25rem;
+      line-height: 1.6;
+    }
+
+    .profile {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+	  text-align: justify;
+    }
+
+    .text-content {
+      flex: 1;
+      padding-right: 20px;
+    }
+
+    .text-content h1 {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #E5E5E5;
+    }
+
+    .text-content p {
+      margin: 10px 0;
+      line-height: 1.5;
+	  color: #E5E5E5;
+	  
+    }
+    .image-content {
+      flex: 1;
+      text-align: center;
+    }
+
+    .image-content img {
+      width: 400px;
+      height: 400px;
+      border-radius: 10%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+	  margin: 60px;
+	  border:1px ;
+	
+    }
+
+    .image-content img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+	  box-shadow: 0 0 10px white;
+	   
+    }
+
+
+	footer {
+			color: white;
+			text-align: center;
+			padding: 0;
+			font-size: 20px;
+			position: fixed;
+			right:0;
+			left:0;
+			bottom:0;
+}
+	html{
+		box-sizing: border-box;
+		height: 100%;
+	
+	}
+	
+	.media {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px; /* Added gap between items */
+  margin: 60px auto; /* Centering the media section */
+}
+
+.media img,
+.media video {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #00ffff;
+  transition: all 0.3s ease-in-out;
+}
+
+.media a {
+  display: inline-block;
+  text-align: center;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.media a img {
+  width: 100%; /* Ensure the image fills the container */
+  height: auto;
+}
+
+.media a:hover img {
+  transform: scale(1.05); /* Hover effect for the image */
+}
+	.topic3 {
+      margin: 30px auto;
+      max-width: 800px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      color: #E5E5E5;
+    }
+
+    .cdate {
+      font-size: 1.25rem;
+      line-height: 1.6;
+    }
+	@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .image-content img {
+    max-width: 100%;
+    margin: 20px 0;
+  }
+
+  .topic2, .topic3 {
+    max-width: 90%;
+    padding: 15px;
+  }
+
+  .media img,
+  .media video {
+    width: 100%;
+    height: auto;
+  }
+
+  footer {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .text-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .text-content p {
+    font-size: 1rem;
+  }
+}
+	
+	
+	
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="webpagenibryan.html">Home</a></li>
+        <li><a href="webpagenibryan-it111blog.html">IT111BLOG</a></li>
+		<li><a href="flexnibryan.html">Flex</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+	<div
+    <section class="image-content">
+	<img src="bg.jpg" alt="My Friends">
+	<img src="flex-bike.jpg" alt="My Friends">
+     </div>
+    </section>
+	<div class="topic2">
+      <p class="Bdate">
+        This is my friends and my bike, they are my inspiration to keep moving and keep living!</br>
+      </p>
+    </div>
+	<h2>Animations</h2>
+	<div class="media">
+		<a href="https://youtu.be/DpexWA3Y-aI?si=er4-MtsZYOYNIERa" target="_blank">
+		<img src="cc.png" alt="Animation 1">
+		</a>
+		<a href="https://youtu.be/trDt3usEXk8?si=yGh3kysN94pepgAZ" target="_blank">
+		<img src="kl.png" alt="Animation 2">
+		</a>
+		</div>
+		<div class="topic3">
+      <p class="cdate">
+        This is my animation in IT Fundamentals!</br>
+      </p>
+    </div>
+	<footer>
+	&copy;2024 Version 1.0.0 | Developed by Bryan Peregrino 
+	</footer>
+  </main>
+</body>
+</html>
